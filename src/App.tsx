@@ -173,9 +173,9 @@ export default function App() {
 
       {/* Navigation */}
       <nav className="fixed w-full z-50 top-0 transition-all duration-300 bg-[#020604]/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
           <a href="#" className="block">
-            <img src="https://iili.io/qfW5RAQ.png" alt="Lilian Pereira" className="h-16 w-auto object-contain" />
+            <img src="https://iili.io/qfW5RAQ.png" alt="Lilian Pereira" className="h-12 md:h-16 w-auto object-contain" />
           </a>
           
           {/* Desktop Menu */}
@@ -228,7 +228,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative h-screen flex items-center justify-center overflow-hidden">
+      <header className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Image with Overlay */}
         <div ref={heroRef} className="absolute inset-0 z-0">
           <img 
@@ -239,14 +239,14 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#020604]/60 via-[#020604]/40 to-[#020604]"></div>
         </div>
 
-        <div ref={textRef} className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <span className="inline-block py-1 px-3 border border-white/20 rounded-full text-xs tracking-[0.2em] uppercase mb-6 text-[#34d399]">
+        <div ref={textRef} className="relative z-10 max-w-4xl mx-auto px-6 text-center py-12">
+          <span className="inline-block py-1 px-3 border border-white/20 rounded-full text-[10px] md:text-xs tracking-[0.2em] uppercase mb-4 md:mb-6 text-[#34d399]">
             Psicologia Clínica Online
           </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-6 leading-[1.1] tracking-tight">
-            Reencontre seu <br/> <span className="italic text-[#34d399]">equilíbrio interior</span>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-serif mb-6 leading-[1.2] md:leading-[1.1] tracking-tight">
+            Reencontre seu <br className="hidden sm:block" /> <span className="italic text-[#34d399]">equilíbrio interior</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+          <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 md:mb-10 font-light leading-relaxed">
             Terapia Cognitiva-Comportamental humanizada e diretiva. 
             Assuma o controle da sua história com segurança e acolhimento.
           </p>
