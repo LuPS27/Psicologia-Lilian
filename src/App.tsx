@@ -6,15 +6,15 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  Brain, 
-  Heart, 
-  ShieldCheck, 
-  Clock, 
-  Video, 
-  Smile, 
-  ArrowRight, 
-  Menu, 
+import {
+  Brain,
+  Heart,
+  ShieldCheck,
+  Clock,
+  Video,
+  Smile,
+  ArrowRight,
+  Menu,
   X,
   Quote
 } from 'lucide-react';
@@ -23,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  
+
   // Form State
   const [formData, setFormData] = React.useState({
     name: '',
@@ -45,7 +45,7 @@ export default function App() {
       newErrors.email = "Email inválido";
     }
     if (!formData.message.trim()) newErrors.message = "Mensagem é obrigatória";
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -88,7 +88,7 @@ export default function App() {
     // Loading Animation Logic
     const hideLoader = () => {
       if (!loaderRef.current) return;
-      
+
       gsap.to(loaderRef.current, {
         opacity: 0,
         duration: 1.2,
@@ -98,16 +98,16 @@ export default function App() {
 
       // Start Hero Animation slightly before loader finishes
       const tl = gsap.timeline({ delay: 0.5 });
-      
-      tl.fromTo(heroRef.current, 
+
+      tl.fromTo(heroRef.current,
         { opacity: 0, scale: 1.1 },
         { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out" }
       )
-      .fromTo(textRef.current?.children || [], 
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power3.out" },
-        "-=1"
-      );
+        .fromTo(textRef.current?.children || [],
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power3.out" },
+          "-=1"
+        );
     };
 
     // Wait for window load or minimum time
@@ -151,10 +151,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#020604] text-[#ecfdf5] selection:bg-[#34d399] selection:text-black relative">
-      
+
       {/* Loading Overlay */}
       {isLoading && (
-        <div 
+        <div
           ref={loaderRef}
           className="fixed inset-0 z-[100] bg-[#020604] flex flex-col items-center justify-center"
         >
@@ -177,7 +177,7 @@ export default function App() {
           <a href="#" className="block">
             <img src="https://iili.io/qfW5RAQ.png" alt="Lilian Pereira" className="h-12 md:h-16 w-auto object-contain" />
           </a>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 text-sm tracking-widest uppercase opacity-80">
             <a href="#sobre" className="group relative hover:text-[#34d399] transition-colors">
@@ -192,9 +192,9 @@ export default function App() {
               Método TCC
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#34d399] transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a 
-              href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!" 
-              target="_blank" 
+            <a
+              href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!"
+              target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 border border-[#34d399] text-[#34d399] hover:bg-[#34d399] hover:text-black transition-all duration-300 rounded-full"
             >
@@ -214,11 +214,11 @@ export default function App() {
             <a href="#sobre" onClick={toggleMenu} className="block py-2 hover:text-[#34d399]">Sobre</a>
             <a href="#especialidades" onClick={toggleMenu} className="block py-2 hover:text-[#34d399]">Especialidades</a>
             <a href="#metodo" onClick={toggleMenu} className="block py-2 hover:text-[#34d399]">Método TCC</a>
-            <a 
-              href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!" 
-              target="_blank" 
+            <a
+              href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!"
+              target="_blank"
               rel="noopener noreferrer"
-              onClick={toggleMenu} 
+              onClick={toggleMenu}
               className="block py-2 text-[#34d399]"
             >
               Agendar Consulta
@@ -231,9 +231,9 @@ export default function App() {
       <header className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Image with Overlay */}
         <div ref={heroRef} className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop" 
-            alt="Calm Ocean" 
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop"
+            alt="Calm Ocean"
             className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#020604]/60 via-[#020604]/40 to-[#020604]"></div>
@@ -247,13 +247,13 @@ export default function App() {
             Reencontre seu <br className="hidden sm:block" /> <span className="italic text-[#34d399]">equilíbrio interior</span>
           </h1>
           <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 md:mb-10 font-light leading-relaxed">
-            Terapia Cognitiva-Comportamental humanizada e diretiva. 
+            Terapia Cognitiva-Comportamental humanizada e diretiva.
             Assuma o controle da sua história com segurança e acolhimento.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!" 
-              target="_blank" 
+            <a
+              href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!"
+              target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 py-4 bg-[#34d399] text-black rounded-full font-medium tracking-wide overflow-hidden"
             >
@@ -273,10 +273,10 @@ export default function App() {
       <div className="border-y border-white/5 bg-[#05100a]">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            <span className="flex items-center gap-2 text-sm tracking-widest uppercase"><Video size={16}/> Atendimento Online</span>
-            <span className="flex items-center gap-2 text-sm tracking-widest uppercase"><ShieldCheck size={16}/> Sigilo Absoluto</span>
-            <span className="flex items-center gap-2 text-sm tracking-widest uppercase"><Clock size={16}/> Horários Flexíveis</span>
-            <span className="flex items-center gap-2 text-sm tracking-widest uppercase"><Heart size={16}/> Abordagem Humanizada</span>
+            <span className="flex items-center gap-2 text-sm tracking-widest uppercase"><Video size={16} /> Atendimento Online</span>
+            <span className="flex items-center gap-2 text-sm tracking-widest uppercase"><ShieldCheck size={16} /> Sigilo Absoluto</span>
+            <span className="flex items-center gap-2 text-sm tracking-widest uppercase"><Clock size={16} /> Horários Flexíveis</span>
+            <span className="flex items-center gap-2 text-sm tracking-widest uppercase"><Heart size={16} /> Abordagem Humanizada</span>
           </div>
         </div>
       </div>
@@ -287,9 +287,9 @@ export default function App() {
           {/* Image Column */}
           <div className="relative order-2 lg:order-1">
             <div className="absolute -top-4 -left-4 w-24 h-24 border-t border-l border-[#34d399]/30"></div>
-            <img 
-              src="https://iili.io/qfVBewJ.jpg" 
-              alt="Psicóloga Lilian Pereira" 
+            <img
+              src="https://iili.io/qfVBewJ.jpg"
+              alt="Psicóloga Lilian Pereira"
               className="w-full h-[600px] object-cover object-top rounded-sm grayscale hover:grayscale-0 transition-all duration-700"
             />
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b border-r border-[#34d399]/30"></div>
@@ -299,12 +299,12 @@ export default function App() {
           <div className="order-1 lg:order-2">
             <span className="text-[#34d399] tracking-widest uppercase text-sm mb-4 block">Sobre Mim</span>
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
-              Olá, sou <br/> <span className="italic text-[#34d399]">Lilian Pereira</span>
+              Olá, sou <br /> <span className="italic text-[#34d399]">Lilian Pereira</span>
             </h2>
             <h3 className="text-xl text-gray-300 mb-6 font-light">
               Psicóloga, pós-graduada em Saúde Mental e graduanda em Sexualidade Humana.
             </h3>
-            
+
             <div className="space-y-6 text-gray-400 leading-relaxed">
               <p>
                 Minha paixão é acompanhar mulheres em seus processos de reencontro consigo mesmas, ajudando-as a reconhecer sua própria força, suas necessidades emocionais e sua essência. Acredito profundamente no poder do autoconhecimento como caminho para uma vida mais consciente, leve e alinhada àquilo que cada pessoa verdadeiramente é.
@@ -315,7 +315,7 @@ export default function App() {
               <p>
                 Entendo que cada mulher carrega sua própria história, subjetividade e trajetória, e é através dessa singularidade que construo um atendimento:
               </p>
-              
+
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                 <li className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 bg-[#34d399] rounded-full"></span>
@@ -338,7 +338,7 @@ export default function App() {
               <p>
                 Meu compromisso é oferecer um espaço seguro, ético e sensível, onde você possa explorar suas vivências, desenvolver clareza sobre quem é e fortalecer seu caminho de reconexão consigo mesma.
               </p>
-              
+
               <p className="text-[#34d399] font-serif italic text-lg border-l-2 border-[#34d399] pl-4 mt-6">
                 "Seja bem-vinda. Aqui, sua história tem espaço para florescer."
               </p>
@@ -363,7 +363,7 @@ export default function App() {
               </div>
               <h3 className="text-2xl font-serif mb-4">Ansiedade</h3>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Imagine ter controle para lidar com seus problemas sem deixar a ansiedade influenciar suas escolhas. 
+                Imagine ter controle para lidar com seus problemas sem deixar a ansiedade influenciar suas escolhas.
                 Ofereço orientação estruturada e diretiva, com metas definidas por você.
               </p>
               <ul className="text-sm text-gray-500 space-y-2">
@@ -380,7 +380,7 @@ export default function App() {
               </div>
               <h3 className="text-2xl font-serif mb-4">Depressão</h3>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Não espere chegar ao fundo do poço. Você não precisa passar por essa angústia sozinho(a). 
+                Não espere chegar ao fundo do poço. Você não precisa passar por essa angústia sozinho(a).
                 Vamos identificar e confrontar pensamentos distorcidos juntos.
               </p>
               <ul className="text-sm text-gray-500 space-y-2">
@@ -430,18 +430,18 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <div className="absolute -top-4 -left-4 w-24 h-24 border-t border-l border-[#34d399]/30"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop" 
-              alt="Terapia" 
+            <img
+              src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop"
+              alt="Terapia"
               className="w-full h-[600px] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700"
             />
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b border-r border-[#34d399]/30"></div>
           </div>
-          
+
           <div>
             <span className="text-[#34d399] tracking-widest uppercase text-sm mb-4 block">Metodologia</span>
             <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
-              Terapia Cognitiva <br/> <span className="italic text-gray-500">Comportamental</span>
+              Terapia Cognitiva <br /> <span className="italic text-gray-500">Comportamental</span>
             </h2>
             <p className="text-gray-400 leading-relaxed mb-6 text-lg">
               A TCC se fundamenta na crença de que o afeto e o comportamento de um indivíduo são em grande parte determinados pelo modo como ele estrutura o mundo em sua mente.
@@ -449,9 +449,9 @@ export default function App() {
             <p className="text-gray-400 leading-relaxed mb-8">
               As cognições do sujeito se baseiam em atitudes ou pressuposições desenvolvidas a partir de vulnerabilidades biológicas e experiências. Minhas técnicas visam identificar e testar reações distorcidas, guiando para a construção de comportamentos mais funcionais.
             </p>
-            <a 
-              href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!" 
-              target="_blank" 
+            <a
+              href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[#34d399] hover:text-white transition-colors border-b border-[#34d399] pb-1"
             >
@@ -478,7 +478,7 @@ export default function App() {
               <Smile className="text-[#34d399] mb-6" size={40} />
               <h3 className="text-3xl font-serif mb-4">Atendimento Humanizado</h3>
               <p className="text-gray-400 text-lg">
-                Cada história é única. O acolhimento é a base de todo o processo terapêutico, 
+                Cada história é única. O acolhimento é a base de todo o processo terapêutico,
                 criando um vínculo de confiança e respeito mútuo essencial para o progresso.
               </p>
             </div>
@@ -508,8 +508,8 @@ export default function App() {
               </div>
             </div>
 
-             {/* Small Item */}
-             <div className="bg-[#05100a] border border-white/5 p-8 rounded-2xl flex flex-col justify-center hover:border-[#34d399]/30 transition-colors">
+            {/* Small Item */}
+            <div className="bg-[#05100a] border border-white/5 p-8 rounded-2xl flex flex-col justify-center hover:border-[#34d399]/30 transition-colors">
               <Heart className="text-[#34d399] mb-4" size={24} />
               <h3 className="text-xl font-serif mb-2">Acessível</h3>
               <p className="text-gray-500 text-sm">Valores justos para facilitar seu tratamento.</p>
@@ -525,7 +525,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-2xl md:text-3xl font-serif leading-relaxed mb-6">
-                "A terapia com a Lilian foi um divisor de águas na minha vida. 
+                "A terapia com a Lilian foi um divisor de águas na minha vida.
                 Aprendi a lidar com minha ansiedade de forma prática e acolhedora."
               </p>
               <div className="flex items-center gap-4">
@@ -538,7 +538,7 @@ export default function App() {
             </div>
             <div>
               <p className="text-2xl md:text-3xl font-serif leading-relaxed mb-6">
-                "Profissional excelente. O método TCC é muito assertivo e a Lilian conduz 
+                "Profissional excelente. O método TCC é muito assertivo e a Lilian conduz
                 as sessões com muita empatia e clareza."
               </p>
               <div className="flex items-center gap-4">
@@ -573,7 +573,7 @@ export default function App() {
                 <p className="text-gray-400">
                   Obrigada pelo contato. Retornarei o mais breve possível.
                 </p>
-                <button 
+                <button
                   onClick={() => setSubmitSuccess(false)}
                   className="mt-8 text-[#34d399] hover:text-white transition-colors"
                 >
@@ -596,7 +596,7 @@ export default function App() {
                     />
                     {errors.name && <p className="text-red-400 text-xs">{errors.name}</p>}
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="phone" className="text-sm text-gray-500 uppercase tracking-wider">Telefone</label>
                     <input
@@ -667,25 +667,20 @@ export default function App() {
             Vamos conversar?
           </h2>
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-            Dê o primeiro passo em direção ao seu bem-estar. 
+            Dê o primeiro passo em direção ao seu bem-estar.
             Agende sua sessão online e comece sua transformação.
           </p>
-          <a 
-            href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!" 
-            target="_blank" 
+          <a
+            href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!"
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-12 py-5 bg-[#34d399] text-black text-lg font-medium rounded-full hover:bg-white transition-colors duration-300"
           >
             Agendar Consulta Online
           </a>
-          
-          <div className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+
+          <div className="mt-24 pt-8 border-t border-white/10 flex flex-col items-center text-sm text-gray-600">
             <p>&copy; 2026 Lilian Pereira. Todos os direitos reservados.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-[#34d399]">Instagram</a>
-              <a href="#" className="hover:text-[#34d399]">LinkedIn</a>
-              <a href="#" className="hover:text-[#34d399]">WhatsApp</a>
-            </div>
           </div>
         </div>
       </footer>
