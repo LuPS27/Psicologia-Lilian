@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lilianpsicologa.exponha.com/sitemap.xml
