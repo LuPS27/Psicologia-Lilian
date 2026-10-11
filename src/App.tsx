@@ -188,6 +188,7 @@ export default function App() {
               Especialidades
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#34d399] transition-all duration-300 group-hover:w-full"></span>
             </a>
+            <a href="/blog/" className="group relative hover:text-[#34d399] transition-colors">Blog</a>
             <a href="#metodo" className="group relative hover:text-[#34d399] transition-colors">
               Método TCC
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#34d399] transition-all duration-300 group-hover:w-full"></span>
@@ -214,6 +215,7 @@ export default function App() {
             <a href="#sobre" onClick={toggleMenu} className="block py-2 hover:text-[#34d399]">Sobre</a>
             <a href="#especialidades" onClick={toggleMenu} className="block py-2 hover:text-[#34d399]">Especialidades</a>
             <a href="#metodo" onClick={toggleMenu} className="block py-2 hover:text-[#34d399]">Método TCC</a>
+            <a href="/blog/" className="block py-2 hover:text-[#34d399]">Blog</a>
             <a
               href="https://wa.me/5531998816133?text=Quero%20agendar%20uma%20consulta!"
               target="_blank"
@@ -680,7 +682,7 @@ export default function App() {
           </a>
 
           <div className="mt-24 pt-8 border-t border-white/10 flex flex-col items-center text-sm text-gray-600">
-            <p>&copy; 2026 Lilian Pereira. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Lilian Pereira. Todos os direitos reservados. <a href="/blog/" className="text-[#34d399] hover:underline">Blog de psicologia</a></p>
           </div>
         </div>
       </footer>
